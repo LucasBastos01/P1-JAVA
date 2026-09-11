@@ -1,0 +1,157 @@
+type: collection.insomnia.rest/5.0
+name: Adoção P1
+meta:
+  id: wrk_2238bfed623347cc9fb56d671938a783
+  created: 1789069748990
+  modified: 1789069748990
+collection:
+  - name: Animals
+    meta:
+      id: fld_1dfe9eb12333490893194eecbb4e81c6
+      created: 1789069765527
+      modified: 1789069765527
+      sortKey: -1789069765527
+    children:
+      - url: http://localhost:8080/animals/0da3bb1f-9ce7-40cc-9e81-b1ca975ec3a2
+        name: Delete
+        meta:
+          id: req_e683fcc8e1954770983f81ace5990c1c
+          created: 1789069784774
+          modified: 1789157607894
+          isPrivate: false
+          sortKey: -1789069787441
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animals?species=DOG
+        name: Get List
+        meta:
+          id: req_de1a1824b6b64f77b00e576e0917e98c
+          created: 1789069789862
+          modified: 1789158489011
+          isPrivate: false
+          description: |-
+            http://localhost:8080/animals?minAge=3&maxAge=5
+
+            http://localhost:8080/animals?minAge=3&maxAge=5&species=DOG
+
+            http://localhost:8080/animals?species=DOG
+
+            http://localhost:8080/animals
+          sortKey: -1789069789862
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animals/3ce0dc42-7812-49f8-93c5-3ac0d0e6ae05
+        name: Get By Id
+        meta:
+          id: req_535e1b32456243109f7953f37b7fa5c5
+          created: 1789069791684
+          modified: 1789157148429
+          isPrivate: false
+          sortKey: -1789069791684
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animals/3ce0dc42-7812-49f8-93c5-3ac0d0e6ae05
+        name: Update
+        meta:
+          id: req_7c3fb76e034243ec9c16cd825d613317
+          created: 1789069792833
+          modified: 1789158508136
+          isPrivate: false
+          sortKey: -1789069792833
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "name": "Thor",
+              "description": "Cachorro dócil, brincalhão e disponível para adoção",
+              "age": 8,
+              "species": "DOG"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animals
+        name: Create
+        meta:
+          id: req_ab5cd4e7dda44b2fa70208e0b126fec4
+          created: 1789069794467
+          modified: 1789158517839
+          isPrivate: false
+          sortKey: -1789069794467
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "name": "Thor",
+              "description": "Cachorro dócil, brincalhão e disponível para adoção",
+              "age": 3,
+              "species": "DOG"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_78c737c1ce74ec8df1bee46d7dab31760a20fce6
+    created: 1789069748999
+    modified: 1789069748999
+environments:
+  name: Base Environment
+  meta:
+    id: env_78c737c1ce74ec8df1bee46d7dab31760a20fce6
+    created: 1789069748995
+    modified: 1789069748995
+    isPrivate: false
