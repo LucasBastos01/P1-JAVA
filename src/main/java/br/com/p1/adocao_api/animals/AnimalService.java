@@ -10,24 +10,24 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class AnimalsService {
+public class AnimalService {
 
-    private final AnimalsRepository animalsRepository;
+    private final AnimalRepository animalsRepository;
 
-    public AnimalsService(AnimalsRepository animalsRepository) {
+    public AnimalService(AnimalRepository animalsRepository) {
         this.animalsRepository = animalsRepository;
     }
 
     public AnimalResponseDTO create(AnimalRequestDTO request) {
 
-        Animals animal = new Animals();
+        Animal animal = new Animal();
 
         animal.setName(request.name());
         animal.setDescription(request.description());
         animal.setAge(request.age());
         animal.setSpecies(request.species());
 
-        Animals savedAnimal = animalsRepository.save(animal);
+        Animal savedAnimal = animalsRepository.save(animal);
 
         return toResponse(savedAnimal);
     }
@@ -38,7 +38,7 @@ public class AnimalsService {
             AnimalSpecies species
     ) {
 
-        List<Animals> animals;
+        List<Animal> animals;
 
         if (minAge != null && maxAge != null && species != null) {
             animals = animalsRepository.findByAgeBetweenAndSpecies(
@@ -64,40 +64,40 @@ public class AnimalsService {
 
     public AnimalResponseDTO getById(UUID id) {
 
-        Animals animal = findAnimalById(id);
+        Animal animal = findAnimalById(id);
 
         return toResponse(animal);
     }
 
     public AnimalResponseDTO update(UUID id, AnimalRequestDTO request) {
 
-        Animals existingAnimal = findAnimalById(id);
+        Animal existingAnimal = findAnimalById(id);
 
         existingAnimal.setName(request.name());
         existingAnimal.setDescription(request.description());
         existingAnimal.setAge(request.age());
         existingAnimal.setSpecies(request.species());
 
-        Animals updatedAnimal = animalsRepository.save(existingAnimal);
+        Animal updatedAnimal = animalsRepository.save(existingAnimal);
 
         return toResponse(updatedAnimal);
     }
 
     public void delete(UUID id) {
 
-        Animals animal = findAnimalById(id);
+        Animal animal = findAnimalById(id);
 
         animalsRepository.delete(animal);
     }
 
-    private Animals findAnimalById(UUID id) {
+    private Animal findAnimalById(UUID id) {
         return animalsRepository.findById(id)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Animal não encontrado")
                 );
     }
 
-    private AnimalResponseDTO toResponse(Animals animal) {
+    private AnimalResponseDTO toResponse(Animal animal) {
         return new AnimalResponseDTO(
                 animal.getId(),
                 animal.getName(),

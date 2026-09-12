@@ -12,7 +12,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Animals {
+public class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

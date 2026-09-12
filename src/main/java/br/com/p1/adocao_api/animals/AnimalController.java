@@ -12,11 +12,11 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/animals")
-public class AnimalsController {
+public class AnimalController {
 
-    private final AnimalsService animalsService;
+    private final AnimalService animalsService;
 
-    public AnimalsController(AnimalsService animalsService) {
+    public AnimalController(AnimalService animalsService) {
         this.animalsService = animalsService;
     }
 

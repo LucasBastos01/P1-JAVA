@@ -6,13 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface AnimalsRepository extends JpaRepository<Animals, UUID> {
+public interface AnimalRepository extends JpaRepository<Animal, UUID> {
 
-    List<Animals> findByAgeBetween(Integer minAge, Integer maxAge);
+    List<Animal> findByAgeBetween(Integer minAge, Integer maxAge);
 
-    List<Animals> findBySpecies(AnimalSpecies species);
+    List<Animal> findBySpecies(AnimalSpecies species);
 
-    List<Animals> findByAgeBetweenAndSpecies(
+    List<Animal> findByAgeBetweenAndSpecies(
             Integer minAge,
             Integer maxAge,
             AnimalSpecies species
