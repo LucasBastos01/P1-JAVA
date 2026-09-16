@@ -55,13 +55,13 @@ Para encerrar a aplicação e os containers, execute:
 docker compose down
 ```
 
-## Testando a API com Insomnia
+## Testando a API com Insomnia ou Postman
 
 O projeto já possui um arquivo de configuração do **Insomnia** com as requisições preparadas para testar os endpoints da API.
 
 Para utilizá-lo:
 
-1. Abra o **Insomnia**.
+1. Abra o **Insomnia** ou **Postman**.
 2. Importe o arquivo do Insomnia disponível na raiz do projeto.
 3. Certifique-se de que a aplicação esteja rodando com:
 
